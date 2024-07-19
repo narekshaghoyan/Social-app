@@ -1,4 +1,6 @@
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 extension Color {
     init(hex: String) {
@@ -73,6 +75,9 @@ struct Register: View {
                         .frame(maxWidth: 370)
                         .offset(x: -3, y: -130)
                         .foregroundColor(Color.white)
+                        .onChange(of: email) { newEmail in
+                            email = newEmail.lowercased()
+                        }
                         
                         TextField(
                             "",
@@ -88,18 +93,19 @@ struct Register: View {
                         .frame(maxWidth: 370) // Ensure VStack fills parent width
                         .offset(x: -3, y: -160)
                         .foregroundColor(Color.white)
+                        .onChange(of: password) { newPassword in
+                            password = newPassword.lowercased()
+                        }
                         
                         Button(action: {
-                            print("Send request to server, to register user...")
+                            register(email: email, password: password, firstName: firstName, lastName: lastName)
                         }) {
                             Text("Sign up")
                                 .foregroundColor(.white)
-                                .padding()
                                 .frame(width: 250, height: 50)
                                 .background(Color.green)
                                 .cornerRadius(8)
                                 .font(.system(size: 25, weight: .semibold))
-                                .offset(y: -150)
                         }
                         
                         NavigationLink(
@@ -120,6 +126,29 @@ struct Register: View {
                     
                 )
 
+        }
+    }
+}
+
+private func register(email: String, password: String, firstName: String, lastName: String) {
+    Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        if let error = error {
+            print("Error creating user: \(error.localizedDescription)")
+            // Handle error
+        } else {
+            // User created successfully
+            print("User created")
+            // Optionally, update user's display name
+            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+            changeRequest?.displayName = "\(firstName) \(lastName)"
+            changeRequest?.commitChanges(completion: { error in
+                if let error = error {
+                    print("Error updating profile: \(error.localizedDescription)")
+                } else {
+                    // Profile updated successfully
+                    print("Profile updated")
+                }
+            })
         }
     }
 }

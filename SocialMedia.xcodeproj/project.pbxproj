@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1A6D202C4A6C7600B012B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A6D1F2C4A6C7600B012B4 /* User.swift */; };
+		CE1A6D222C4A71D700B012B4 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A6D212C4A71D700B012B4 /* Posts.swift */; };
+		CE1A6D242C4A828B00B012B4 /* Allusers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A6D232C4A828B00B012B4 /* Allusers.swift */; };
 		CE4F05F22C469DE100176E90 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F05F12C469DE100176E90 /* Login.swift */; };
-		CE4F05F42C46A36400176E90 /* main.admin-no-correct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4F05F32C46A36400176E90 /* main.admin-no-correct.swift */; };
-		CE6F77872C47EA6500AEE349 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F77862C47EA6500AEE349 /* test.swift */; };
 		CE6F77892C47F34E00AEE349 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6F77882C47F34E00AEE349 /* GoogleService-Info.plist */; };
 		CE6F778C2C47F59A00AEE349 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CE6F778B2C47F59A00AEE349 /* FirebaseAnalytics */; };
 		CE6F778E2C47F59A00AEE349 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = CE6F778D2C47F59A00AEE349 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -46,9 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1A6D1F2C4A6C7600B012B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE1A6D212C4A71D700B012B4 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		CE1A6D232C4A828B00B012B4 /* Allusers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allusers.swift; sourceTree = "<group>"; };
 		CE4F05F12C469DE100176E90 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ../Login.swift; sourceTree = "<group>"; };
-		CE4F05F32C46A36400176E90 /* main.admin-no-correct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "main.admin-no-correct.swift"; sourceTree = "<group>"; };
-		CE6F77862C47EA6500AEE349 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		CE6F77882C47F34E00AEE349 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEB614782C46751000C385B3 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB6147B2C46751000C385B3 /* SocialMediaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaApp.swift; sourceTree = "<group>"; };
@@ -116,13 +118,14 @@
 			isa = PBXGroup;
 			children = (
 				CE6F77882C47F34E00AEE349 /* GoogleService-Info.plist */,
-				CE6F77862C47EA6500AEE349 /* test.swift */,
-				CE4F05F32C46A36400176E90 /* main.admin-no-correct.swift */,
 				CE4F05F12C469DE100176E90 /* Login.swift */,
 				CEB6147F2C46751100C385B3 /* Assets.xcassets */,
 				CEB614812C46751100C385B3 /* Preview Content */,
 				CEB614892C4678AE00C385B3 /* register.swift */,
 				CEB6147B2C46751000C385B3 /* SocialMediaApp.swift */,
+				CE1A6D1F2C4A6C7600B012B4 /* User.swift */,
+				CE1A6D212C4A71D700B012B4 /* Posts.swift */,
+				CE1A6D232C4A828B00B012B4 /* Allusers.swift */,
 			);
 			path = SocialMedia;
 			sourceTree = "<group>";
@@ -240,10 +243,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4F05F22C469DE100176E90 /* Login.swift in Sources */,
+				CE1A6D242C4A828B00B012B4 /* Allusers.swift in Sources */,
+				CE1A6D222C4A71D700B012B4 /* Posts.swift in Sources */,
 				CEB6147C2C46751000C385B3 /* SocialMediaApp.swift in Sources */,
+				CE1A6D202C4A6C7600B012B4 /* User.swift in Sources */,
 				CEB6148A2C4678AE00C385B3 /* register.swift in Sources */,
-				CE6F77872C47EA6500AEE349 /* test.swift in Sources */,
-				CE4F05F42C46A36400176E90 /* main.admin-no-correct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,12 +6,14 @@ struct Login: View {
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var email: String = ""
-    
+    @State private var loggedIn = false // Track login state
+
     @ScaledMetric(relativeTo: .body) private var secureFieldHeight: CGFloat = 21
     @State private var password = ""
     
     @State private var showAlert = false
-    
+    @State private var isLoggedIn: Bool = false  // Track login status
+        
     var body: some View {
         NavigationView {
             Color(hex: "375CBC")
@@ -53,10 +55,17 @@ struct Login: View {
                             .frame(maxWidth: 370) // Ensure VStack fills parent width
                             .offset(x: -3, y: -160)
                             .foregroundColor(Color.white)
+                            .onChange(of: email) { newEmail in
+                                email = newEmail.lowercased()
+                            }
                         
                         Button(action: {
                             login(email: email, password: password) { success in
-                                showAlert = !success
+                                if success {
+                                    isLoggedIn = true
+                                } else {
+                                    showAlert = true
+                                }
                             }
                         }, label: {
                             Text("Login")
@@ -74,6 +83,16 @@ struct Login: View {
                                 message: Text("Email or password is not correct!")
                             )
                         }
+
+                        // NavigationLink to another view
+                        NavigationLink(
+                            destination: PostsView().navigationBarBackButtonHidden(true),
+                            isActive: $isLoggedIn,
+                            label: {
+                                EmptyView()  // This is hidden; navigation happens programmatically
+                            })
+                            .hidden()
+                        
                         
                         NavigationLink(
                             destination: Register().navigationBarBackButtonHidden(true),
